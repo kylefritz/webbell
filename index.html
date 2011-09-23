@@ -10,7 +10,7 @@
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io.connect('http://localhost');
+      var socket = io.connect(document.location.protocol+"//"+document.location.hostname);
       socket.on('news', function (data) {
         console.log(data);
         socket.emit('my other event', { my: 'data' });
