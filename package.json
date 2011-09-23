@@ -1,0 +1,9 @@
+{
+  "name": "webbell",
+  "author": "Kyle Fritz <kyle.p.fritz@gmail.com>",
+  "version": "0.0.1",
+  "dependencies":{
+    "express":"2.2.0",
+    "datetime":"0.0.3"
+  }
+}
