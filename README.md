@@ -1,8 +1,9 @@
 #Webbell is a internet controlled helicopter
 
-
+![Flyz!](/kylefritz/webbell/raw/master/webbell.jpeg)
 
 Web = the internet
+
 Bell = a helicopter manufacturer
 
 
