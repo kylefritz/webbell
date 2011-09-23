@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>WEBBELL</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost');
+      socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+      });
+      socket.on('gas:changed',function(data){
+        $('#gas').html(data['gas']);
+      });
+      $(function(){
+        $('#up').click(function(){
+          socket.emit("gas:change",{inc:1});
+        });
+        $('#down').click(function(){
+          socket.emit("gas:change",{inc: -1});
+        });
+      });
+    </script>
+
+
+  </head>
+  <body>
+    <p>gas: <span id="gas">0</span></p>
+    <p><button id="up">up</button></p>
+    <p><button id="down">down</button></p>
+  </body>
+</html>
+
